@@ -1,18 +1,22 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class LoginService {
-  private isUserLoggedIn = new BehaviorSubject(false);
-  isUserLoggedIn$ = this.isUserLoggedIn.asObservable();
+  private isUserLoggedIn = signal(false);
 
-  checkCredentials(username: string, password: string) {
+  isLoggedIn(): boolean {
+    return this.isUserLoggedIn();
+  }
+
+  checkCredentials(username: string, password: string): boolean {
     if (username === 'admin' && password === 'admin') {
-      this.isUserLoggedIn.next(true);
+      this.isUserLoggedIn.set(true);
+      return true;
     }
+    return false;
   }
 
   logout() {
-    this.isUserLoggedIn.next(false);
+    this.isUserLoggedIn.set(false);
   }
 }
