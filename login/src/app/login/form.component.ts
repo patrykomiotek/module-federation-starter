@@ -14,7 +14,9 @@ import { LoginService } from './login.service';
         <input type="password" name="password" [(ngModel)]="password" placeholder="Password" />
         <button type="submit">Login</button>
       </form>
-      <div *ngIf="isLoggedIn$ | async">User is logged in!</div>
+      @if (isLoggedIn$ | async) {
+      <div>User is logged in!</div>
+      }
     </div>
   `,
   styles: [
