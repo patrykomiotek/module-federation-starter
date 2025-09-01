@@ -7,6 +7,7 @@ import { Component, signal } from '@angular/core';
     <div class="content">
       <div class="left-side">
         <h1>Login component</h1>
+        <login-form></login-form>
       </div>
     </div>
   `,
