@@ -46,7 +46,7 @@ import { Component, signal } from '@angular/core';
         </svg>
 
         <h1>Hello, {{ title() }} {{ name() }}</h1>
-        <p>Congratulations! Your app is running. 🎉</p>
+        <p>Congratulations! Your app is running 🎉</p>
       </div>
       <div class="divider" role="separator" aria-label="Divider"></div>
       <div class="right-side">
